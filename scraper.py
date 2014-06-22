@@ -2,8 +2,8 @@ from bs4 import BeautifulSoup
 import requests
 import sys
 
-def fetch_search_results(
-    query=None, min=None, max=None, bedrooms=None):
+
+def fetch_search_results(query=None, min=None, max=None, bedrooms=None):
     search_params = {
         key: val for key, val in locals().items() if val is not None
     }
@@ -14,10 +14,12 @@ def fetch_search_results(
     resp.raise_for_status()
     return resp.content, resp.encoding
 
+
 def read_search_results():
     with open('apa.html', 'r') as a:
         data = a.read()
     return data, 'utf-8'
+
 
 def parse_source(html, encoding='utf-8'):
     parsed = BeautifulSoup(html, from_encoding=encoding)
