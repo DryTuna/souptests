@@ -1,17 +1,7 @@
 language: python
 python:
-  - "3.3"
   - "2.7"
   - "2.6"
-
-before_install:
-  - sudo apt-get update -qq
-  - sudo apt-get install -y libxml2-dev
-
-before_script:
-  - sudo add-apt-repository ppa:rethinkdb/ppa
-  - sudo apt-get update -q
-  - sudo apt-get install rethinkdb
 
 # command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
 install: pip install -r requirements.txt
